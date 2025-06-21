@@ -20,8 +20,9 @@ export default function UploadImage() {
             body: JSON.stringify({ data: base64Data, fileName: 'test' }),
           }
         );
+        const result = await response.json();
+        console.log(result.url);
       })();
-      console.log(fileReader.result);
     };
     fileReader.readAsDataURL(file);
   };
